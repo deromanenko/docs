@@ -158,6 +158,18 @@ Route.get(url, closure).middleware(['auth'])
 
 Named middleware executes in the sequence they were defined against their assigned route.
 
+=== Custom Middleware ===
+You can register your custom middleware in any of category:
+
+.start/kernel.js
+[source, js]
+----
+const namedMiddleware = {
+  auth: 'Adonis/Middleware/Auth',
+  custom: 'App/Middleware/Custom' // your middleware
+}
+----
+
 == Middleware Properties
 
 AdonisJs uses the link:https://www.npmjs.com/package/haye#pipe-expression[pipe expression, window="_blank"] to define middleware properties.
